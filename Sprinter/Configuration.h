@@ -13,7 +13,7 @@
 // Gen 3 Plus = 21
 // gen 3  Monolithic Electronics = 22
 // Gen3 PLUS for TechZone Gen3 Remix Motherboard = 23
-#define MOTHERBOARD 3 
+#define MOTHERBOARD 33
 
 //// Thermistor settings:
 // 1 is 100k thermistor
@@ -48,7 +48,7 @@ const bool Z_ENDSTOP_INVERT = false;
 #define BAUDRATE 115200
 
 // Comment out (using // at the start of the line) to disable SD support:
-#define SDSUPPORT
+//#define SDSUPPORT
 // Uncomment to make Sprinter run init.g from SD on boot
 //#define SDINITFILE
 
@@ -72,7 +72,7 @@ const bool DISABLE_E = false;
 // Inverting axis direction
 const bool INVERT_X_DIR = false;
 const bool INVERT_Y_DIR = false;
-const bool INVERT_Z_DIR = true;
+const bool INVERT_Z_DIR = false;
 const bool INVERT_E_DIR = false;
 
 //// ENDSTOP SETTINGS:
@@ -82,7 +82,7 @@ const bool INVERT_E_DIR = false;
 #define Z_HOME_DIR -1
 
 const bool min_software_endstops = false; //If true, axis won't move to coordinates less than zero.
-const bool max_software_endstops = true;  //If true, axis won't move to coordinates greater than the defined lengths below.
+const bool max_software_endstops = false;  //If true, axis won't move to coordinates greater than the defined lengths below.
 const int X_MAX_LENGTH = 200;
 const int Y_MAX_LENGTH = 200;
 const int Z_MAX_LENGTH = 100;
@@ -91,7 +91,7 @@ const int Z_MAX_LENGTH = 100;
 const int NUM_AXIS = 4; // The axis order in all axis related arrays is X, Y, Z, E
 float max_feedrate[] = {200000, 200000, 240, 500000};
 float homing_feedrate[] = {1500,1500,120};
-bool axis_relative_modes[] = {false, false, false, false};
+bool axis_relative_modes[] = {false, false, true, false};
 
 // Min step delay in microseconds. If you are experiencing missing steps, try to raise the delay microseconds, but be aware this
 // If you enable this, make sure STEP_DELAY_RATIO is disabled.
@@ -185,7 +185,7 @@ char uuid[] = "00000000-0000-0000-0000-000000000000";
 //This is for controlling a fan to cool down the stepper drivers
 //it will turn on when any driver is enabled
 //and turn off after the set amount of seconds from last driver being disabled again
-//#define CONTROLLERFAN_PIN 23 //Pin used for the fan to cool controller, comment out to disable this function
+#define CONTROLLERFAN_PIN 23 //Pin used for the fan to cool controller, comment out to disable this function
 #define CONTROLLERFAN_SEC 60 //How many seconds, after all motors were disabled, the fan should run
 
 // Uncomment the following line to enable debugging. You can better control debugging below the following line

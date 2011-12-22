@@ -7,7 +7,7 @@
 #include "Sprinter.h"
 
 #ifdef SDSUPPORT
-#include "SdFat.h"
+  #include "SdFat.h"
 #endif
 
 // look here for descriptions of gcodes: http://linuxcnc.org/handbook/gcode/g-code.html
